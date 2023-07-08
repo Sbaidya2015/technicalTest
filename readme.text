@@ -1,0 +1,8 @@
+H2 inmemory data used
+For RestURL
+http://localhost:8080/person POST to add person data into application
+http://localhost:8080/person GET to get all person data from application
+http://localhost:8080/person?gender=Male to get person data by male only \
+
+
+http://localhost:8080/ to check web form
