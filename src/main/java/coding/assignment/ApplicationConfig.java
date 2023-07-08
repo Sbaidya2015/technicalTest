@@ -55,7 +55,7 @@ public static  final String AUDIT_PROVIDER =  "auditProvider";
     @Bean
     public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setPrefix("/WEB-INF/jsp/");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }

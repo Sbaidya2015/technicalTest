@@ -7,8 +7,4 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/personweb")
 public class PersonControllerWeb {
 
-
-
-
-
 }
