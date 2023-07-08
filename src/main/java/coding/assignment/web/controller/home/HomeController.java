@@ -30,7 +30,7 @@ public class HomeController {
     public String home(ModelMap model) {
 
         model.addAttribute("command", new Person());
-       // model.addAttribute("commandName", "person");
+        // model.addAttribute("commandName", "person");
         return "welcome";
     }
 
@@ -39,28 +39,24 @@ public class HomeController {
         binder.setValidator(validator);
     }
 
-    @RequestMapping(value="/save",method = RequestMethod.POST)
-    public String save(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, Model model){
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String save(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, Model model) {
 
-       if(bindingResult.hasErrors()){
-           return "/welcome";
-       }
-       else {
-           personRepo.save(person);
-           return "redirect:/viewperson";//will redirect to viewemp request mapping
-       }
+        if (bindingResult.hasErrors()) {
+            return "/welcome";
+        } else {
+            personRepo.save(person);
+            return "redirect:/viewperson";//will redirect to viewemp request mapping
+        }
 
     }
 
 
     @RequestMapping("/viewperson")
-    public String viewPersons(Model m){
-        m.addAttribute("list",personRepo.findAll());
+    public String viewPersons(Model m) {
+        m.addAttribute("list", personRepo.findAll());
         return "viewperson";
     }
-
-
-
 
 
 }

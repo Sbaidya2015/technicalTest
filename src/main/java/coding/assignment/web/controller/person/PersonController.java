@@ -16,18 +16,32 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+
 @RestController()
 @RequestMapping(path = "/person", consumes = MediaType.APPLICATION_JSON_VALUE)
 public class PersonController {
     @Autowired
     PersonRepo personRepo;
 
+    /**
+     *
+     * @param person
+     * @return
+     * Entry point to save Person data into database
+     */
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> storePersonData(@Valid @RequestBody Person person) {
         Person personCreated = personRepo.save(person);
         return new ResponseEntity<>(personCreated, HttpStatus.OK);
     }
 
+    /**
+     *
+     * @param customQuery
+     * @return
+     * retrieve data from rest endpoint
+     *
+     */
     @GetMapping
     public ResponseEntity<?> searchPerson(@RequestParam Map<String, String> customQuery) {
         if (customQuery == null || customQuery.isEmpty()) {

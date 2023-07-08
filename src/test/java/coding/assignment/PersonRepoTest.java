@@ -8,8 +8,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.Assert;
 
 import java.util.List;
+
+import static junit.framework.TestCase.assertEquals;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -42,6 +45,7 @@ public class PersonRepoTest {
             log.info(person1.getId()+"  "+person1.getFullname());
 
         });
+        assertEquals(Boolean.FALSE.booleanValue(),allperson.isEmpty());
 
     }
 
