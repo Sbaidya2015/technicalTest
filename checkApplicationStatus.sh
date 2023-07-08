@@ -1,4 +1,4 @@
-$ WEBPAGE="https://www.google.com/" # web page to be loaded
+$ WEBPAGE="http://localhost:8080/" # web page to be loaded
 $ STDOUTFILE=".tempCurlStdOut" # temp file to store stdout
 $ > $STDOUTFILE # cleans the file content
 
