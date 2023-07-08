@@ -6,3 +6,5 @@ http://localhost:8080/person?gender=Male to get person data by male only \
 
 
 http://localhost:8080/ to check web form
+Please check checkApplicationStatus.sh shell script for
+Shell Script in Linux that runs every 5 minutes to check application status (if it’s running) and log the result in a log file.
